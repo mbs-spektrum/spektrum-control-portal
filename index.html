@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spektrum Control — Platforma za upravljanje protivpožarnim kontrolama</title>
-  <meta name="description" content="Spektrum Control je platforma za upravljanje protivpožarnim kontrolama, periodičnim ispravama i radnim nalozima. MBS Spektrum d.o.o. — Sremska Mitrovica." />
+  <title data-i18n-title>Spektrum Control — Platforma za upravljanje protivpožarnim kontrolama</title>
+  <meta name="description" data-i18n-description content="Spektrum Control je platforma za upravljanje protivpožarnim kontrolama, periodičnim ispravama i radnim nalozima. MBS Spektrum d.o.o." />
   <meta name="theme-color" content="#1E3A5F" />
 
   <!-- OpenGraph -->
@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://spektrumcontrol.rs/" />
   <meta property="og:title" content="Spektrum Control" />
   <meta property="og:description" content="Platforma za upravljanje protivpožarnim kontrolama." />
-  <meta property="og:image" content="https://spektrumcontrol.rs/assets/og-image.png" />
+  <meta property="og:image" content="https://spektrumcontrol.rs/assets/logo.png" />
   <meta property="og:locale" content="sr_RS" />
   <meta property="og:site_name" content="Spektrum Control" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Spektrum Control" />
   <meta name="twitter:description" content="Platforma za upravljanje protivpožarnim kontrolama." />
-  <meta name="twitter:image" content="https://spektrumcontrol.rs/assets/og-image.png" />
+  <meta name="twitter:image" content="https://spektrumcontrol.rs/assets/logo.png" />
 
   <!-- Canonical + alternate locales -->
   <link rel="canonical" href="https://spektrumcontrol.rs/" />
@@ -28,18 +28,26 @@
   <link rel="alternate" hreflang="sr-Cyrl" href="https://spektrumcontrol.rs/?lang=sr-Cyrl" />
   <link rel="alternate" hreflang="en" href="https://spektrumcontrol.rs/?lang=en" />
   <link rel="alternate" hreflang="ro" href="https://spektrumcontrol.rs/?lang=ro" />
+  <link rel="alternate" hreflang="mk" href="https://spektrumcontrol.rs/?lang=mk" />
+  <link rel="alternate" hreflang="bg" href="https://spektrumcontrol.rs/?lang=bg" />
+  <link rel="alternate" hreflang="sl" href="https://spektrumcontrol.rs/?lang=sl" />
+  <link rel="alternate" hreflang="hu" href="https://spektrumcontrol.rs/?lang=hu" />
+  <link rel="alternate" hreflang="hr" href="https://spektrumcontrol.rs/?lang=hr" />
+  <link rel="alternate" hreflang="bs-Latn" href="https://spektrumcontrol.rs/?lang=bs-Latn" />
+  <link rel="alternate" hreflang="bs-Cyrl" href="https://spektrumcontrol.rs/?lang=bs-Cyrl" />
+  <link rel="alternate" hreflang="cnr" href="https://spektrumcontrol.rs/?lang=cnr" />
   <link rel="alternate" hreflang="x-default" href="https://spektrumcontrol.rs/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="style.css" />
 
   <!-- Theme bootstrap (avoid flash) -->
   <script>
@@ -54,68 +62,162 @@
   </script>
 </head>
 <body>
+  <!-- Subtle background pattern matching app login -->
+  <div class="bg-pattern" aria-hidden="true"></div>
+
   <header class="topbar" role="banner">
-    <button id="theme-toggle" class="topbar-btn" aria-label="Promeni temu" type="button">
-      <span class="theme-icon-light" aria-hidden="true">☀</span>
-      <span class="theme-icon-dark" aria-hidden="true">🌙</span>
-    </button>
-    <select id="locale-toggle" class="locale-select" aria-label="Promeni jezik">
-      <option value="sr-Latn">SR · Latn</option>
-      <option value="sr-Cyrl">СР · Ћирилица</option>
-      <option value="en">EN</option>
-      <option value="ro">RO</option>
-    </select>
-  </header>
+    <a class="topbar-brand" href="/" aria-label="Spektrum Control">
+      <img src="assets/logo.png" alt="" width="32" height="32" />
+      <span class="topbar-brand-text">Spektrum Control</span>
+    </a>
 
-  <main class="hero" role="main">
-    <div class="hero-inner">
-      <img src="/assets/logo.svg" alt="" class="hero-logo" width="80" height="80" />
-
-      <h1 class="hero-title">SPEKTRUM CONTROL</h1>
-      <p class="hero-pitch" data-i18n="pitch">Platforma za upravljanje protivpožarnim kontrolama</p>
-
-      <div class="cta-row">
-        <a class="cta cta-primary" href="https://app.spektrumcontrol.rs">
-          <span class="cta-icon" aria-hidden="true">🖥</span>
-          <span class="cta-content">
-            <span class="cta-label" data-i18n="openAdmin">Admin dashboard</span>
-            <span class="cta-host">app.spektrumcontrol.rs</span>
-          </span>
-          <span class="cta-arrow" aria-hidden="true">→</span>
-        </a>
-
-        <a class="cta cta-secondary" href="https://field.spektrumcontrol.rs">
-          <span class="cta-icon" aria-hidden="true">📱</span>
-          <span class="cta-content">
-            <span class="cta-label" data-i18n="openMobile">Mobilna aplikacija</span>
-            <span class="cta-host">field.spektrumcontrol.rs</span>
-          </span>
-          <span class="cta-arrow" aria-hidden="true">→</span>
-        </a>
+    <div class="topbar-actions">
+      <div class="locale-wrap">
+        <button id="locale-toggle" class="topbar-btn locale-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Promeni jezik">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <span class="locale-current-label" id="locale-current">SR · Latn</span>
+        </button>
+        <div class="locale-menu" id="locale-menu" role="listbox" hidden></div>
       </div>
 
-      <nav class="legal-row" aria-label="Pravne stranice">
-        <a href="https://app.spektrumcontrol.rs/legal/terms" data-i18n="terms">Uslovi korišćenja</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://app.spektrumcontrol.rs/legal/privacy" data-i18n="privacy">Politika privatnosti</a>
-      </nav>
-
-      <a class="cta-tertiary" href="https://mbs-spektrum.com/kontakt.html" data-i18n="requestDemo">
-        Zatražite demo →
-      </a>
+      <button id="theme-toggle" class="topbar-btn" aria-label="Promeni temu" type="button">
+        <svg class="theme-icon theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2"/><path d="M12 20v2"/>
+          <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+          <path d="M2 12h2"/><path d="M20 12h2"/>
+          <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg class="theme-icon theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
     </div>
+  </header>
+
+  <main role="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="assets/logo.png" alt="" class="hero-logo" width="96" height="96" />
+        <h1 class="hero-title">SPEKTRUM CONTROL</h1>
+        <p class="hero-pitch" data-i18n="pitch">Platforma za upravljanje protivpožarnim kontrolama</p>
+        <p class="hero-sub" data-i18n="heroSub">Periodične isprave, radni nalozi, sertifikati i terenske kontrole — sve u jednoj platformi za firme koje pruzaju usluge zaštite od požara.</p>
+
+        <div class="cta-row">
+          <a class="cta cta-primary" href="https://app.spektrumcontrol.rs">
+            <span class="cta-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </span>
+            <span class="cta-content">
+              <span class="cta-label" data-i18n="openAdmin">Admin dashboard</span>
+              <span class="cta-host">app.spektrumcontrol.rs</span>
+            </span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="cta cta-secondary" href="https://field.spektrumcontrol.rs">
+            <span class="cta-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+            </span>
+            <span class="cta-content">
+              <span class="cta-label" data-i18n="openMobile">Mobilna aplikacija</span>
+              <span class="cta-host">m.spektrumcontrol.rs</span>
+            </span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="features-inner">
+        <h2 class="features-heading" data-i18n="featuresHeading">Šta dobijate</h2>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature1Title">Periodične kontrole</h3>
+            <p class="feature-body" data-i18n="feature1Body">Planiranje, izvođenje i evidencija svih periodičnih kontrola PP aparata, hidranata, panik rasvete, gas-detekcije i ostalih sistema zaštite od požara.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature2Title">Dokumenti i radni nalozi</h3>
+            <p class="feature-body" data-i18n="feature2Body">Periodične isprave, radni nalozi i sertifikati generišu se iz vaših šablona — PDF spreman za potpis i predaju klijentu u par klikova.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature3Title">Terenska aplikacija</h3>
+            <p class="feature-body" data-i18n="feature3Body">Mobilna aplikacija za kontrolore i servisere — skeniranje barkodova, popunjavanje na licu mesta, foto-evidencija i potpis. Radi i bez interneta.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature4Title">Više firmi, jedna platforma</h3>
+            <p class="feature-body" data-i18n="feature4Body">Referent, kontrole, serviseri — svaka uloga ima svoj pristup. Partnerstva među firmama, deljenje klijenata i radnih naloga preko granica organizacija.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature5Title">12 jezika</h3>
+            <p class="feature-body" data-i18n="feature5Body">Srpski (latinica + ćirilica), engleski, rumunski, makedonski, bugarski, slovenački, mađarski, hrvatski, bosanski (latinica + ćirilica), crnogorski.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="feature6Title">Šifrovano i sigurno</h3>
+            <p class="feature-body" data-i18n="feature6Body">Row-level security na svakoj tabeli, šifrovanje u tranzitu i u mirovanju. Vaši podaci ostaju vaši — izvoz baze podataka u jednom kliku.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="trust">
+      <div class="trust-inner">
+        <p class="trust-line" data-i18n="trustLine">Razvijen za potrebe firmi koje pruzaju usluge zaštite od požara, baziran na praksi i propisima koji važe u regionu.</p>
+      </div>
+    </section>
   </main>
 
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
-      <span data-i18n="ownerLine">Vlasnik · MBS Spektrum d.o.o.</span>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <a href="https://mbs-spektrum.com">mbs-spektrum.com</a>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <span data-i18n="footerLocation">Sremska Mitrovica, 1992</span>
+      <nav class="legal-row" aria-label="Pravne stranice">
+        <a href="https://app.spektrumcontrol.rs/legal/terms" data-i18n="terms">Uslovi korišćenja</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://app.spektrumcontrol.rs/legal/privacy" data-i18n="privacy">Politika privatnosti</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://app.spektrumcontrol.rs/legal/cookies" data-i18n="cookies">Kolačići</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://app.spektrumcontrol.rs/legal/impressum" data-i18n="impressum">Impresum</a>
+      </nav>
+      <p class="footer-owner">
+        <span data-i18n="ownerLine">Vlasnik · MBS Spektrum d.o.o.</span>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <span data-i18n="footerLocation">Sremska Mitrovica, 1992</span>
+      </p>
     </div>
   </footer>
 
-  <script src="/script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
