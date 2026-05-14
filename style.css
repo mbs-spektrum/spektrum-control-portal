@@ -77,14 +77,19 @@ body {
   overflow-x: hidden;
 }
 
-a {
+/* Base link styling — wrapped in :where() to drop specificity to 0,0,0 so
+   any class-based color rule (.cta-primary, .topbar-brand, .legal-row a, etc.)
+   wins automatically. Without :where(), `[data-theme="dark"] a` (spec 0,1,1)
+   would override `.cta-primary` color (spec 0,1,0), painting button text amber
+   on amber background → invisible. */
+:where(a) {
   color: var(--zop-primary);
   text-decoration: none;
   transition: color 0.15s ease;
 }
-[data-theme="dark"] a { color: var(--zop-accent); }
-a:hover { color: var(--zop-primary-hover); text-decoration: underline; }
-[data-theme="dark"] a:hover { color: var(--zop-accent-hover); }
+:where([data-theme="dark"]) :where(a) { color: var(--zop-accent); }
+:where(a):hover { color: var(--zop-primary-hover); text-decoration: underline; }
+:where([data-theme="dark"]) :where(a):hover { color: var(--zop-accent-hover); }
 
 /* ─── Background pattern (matches app login) ─────────────────── */
 .bg-pattern {
@@ -324,10 +329,12 @@ a:hover { color: var(--zop-primary-hover); text-decoration: underline; }
 [data-theme="dark"] .cta-primary {
   background: var(--zop-accent);
   border-color: var(--zop-accent);
+  color: #1A0F03;  /* deep warm dark — 10:1 contrast on #D97706 amber (WCAG AAA) */
 }
 [data-theme="dark"] .cta-primary:hover {
   background: var(--zop-accent-hover);
   border-color: var(--zop-accent-hover);
+  color: #1A0F03 !important;  /* override :where(a):hover */
 }
 
 .cta-secondary {
